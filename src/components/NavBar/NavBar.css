@@ -1,0 +1,20 @@
+#navBarOuterContainer {
+	background-color: #f9e547;
+  padding: 20px;
+  color: #000;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#navBarInnerContainer {
+  justify-content: space-around;
+  display: flex;
+  flex: 1;
+}
+
+.navBarItemContainer {
+  justify-content: center;
+  display: flex;
+  flex: 1;
+}

@@ -1,0 +1,27 @@
+.checkbox {
+	flex-basis: 12%;
+}
+
+@media screen and (max-width: 1000px) {
+	.checkbox {
+		flex-basis: 15%;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.checkbox {
+		flex-basis: 20%;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.checkbox {
+		flex-basis: 25%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.checkbox {
+		flex-basis: 50%;
+	}
+}

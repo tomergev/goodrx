@@ -1,0 +1,14 @@
+#seacrhContainer {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.searchBarInput {
+	flex-basis: 40%;
+}
+
+.searchBarButton {
+	flex-basis: 15%;
+}
