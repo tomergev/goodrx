@@ -7,22 +7,27 @@ const LocationSearchBar = (props) => {
 	const {
 		userLocation,
 		setUserLocation,
+		searchBarValue,
+		setSearchBarValue,
 	} = props
 
 	const { lat, lng } = userLocation
 
-	const onClick = async () => {
+	const detectMyLocationClick = async () => {
 		const { lat, lng } = await getLocation()
 		setUserLocation({ lat, lng })
 	}
 
-	console.log('here')
-
 	return (
 		<div id='seacrhContainer'>
-			<input className='searchBarInput' placeholder='Address or Zip' />
+			<input
+				id='searchBarInput'
+				value={searchBarValue}
+				placeholder='Address or Zip'
+				onChange={(e) => setSearchBarValue(e.target.value)}
+			/>
 
-			<Button onClick={onClick} className="searchBarButton">
+			<Button onClick={detectMyLocationClick} className="searchBarButton">
 				<p>
 					Detect My Location
 				</p>
@@ -38,7 +43,8 @@ const LocationSearchBar = (props) => {
 				<u>
 					My Location:
 			</u>
-				{lat, lng}
+				{/* Todo: Add proper spacing here */}
+				{lat}, {lng}
 			</p>
 
 		</div>

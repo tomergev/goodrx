@@ -4,21 +4,18 @@
 */
 
 import React, { Component } from "react";
+// Todo: Set up CSS modules
 import "./App.css";
-
 import NavBar from './components/NavBar'
-import PharmacyViewContainer from './components/PharmacyView/PharmacyViewContainer'
+import PharmacyView from './components/PharmacyView/'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <NavBar />
-        {/* <header className="App-header">
-          <h1 className="App-title">Welcome to GoodRx</h1>
-        </header> */}
         <div className="App-content">
-          <PharmacyViewContainer />
+          <PharmacyView />
         </div>
       </div>
     );

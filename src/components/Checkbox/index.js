@@ -6,19 +6,22 @@ const Checkbox = (props) => {
 		checked,
 		pharmacyName,
 		pharmacyFilter,
-		setPharmacyFilter, 
+		setPharmacyFilter,
 	} = props
 
 	return (
 		<div key={pharmacyName} className="checkbox">
 			<input
-				value={pharmacyName}
-				name={pharmacyName}
-				checked={checked}
 				type="checkbox"
+				checked={checked}
+				name={pharmacyName}
+				value={pharmacyName}
 				onChange={(e) => setPharmacyFilter({
 					...pharmacyFilter,
-					[e.target.name]: { checked: !pharmacyFilter[e.target.name].checked }
+					[e.target.name]: {
+						...pharmacyFilter[e.target.name],
+						checked: !pharmacyFilter[e.target.name].checked,
+					}
 				})}
 			/>
 			<span>{pharmacyName}</span>

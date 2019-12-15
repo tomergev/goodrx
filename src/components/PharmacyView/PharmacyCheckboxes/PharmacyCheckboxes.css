@@ -1,0 +1,4 @@
+#checkboxesContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
