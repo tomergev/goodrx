@@ -17,11 +17,11 @@ const NavBar = () => {
 					<Button><i className="fa fa-search"></i></Button>
 				</div>
 
-				<div className="navBarItemContainer">
-					<p >How GoodRx Works</p>
-					<p >Discount Card</p>
-					<p >More</p>
-				</div>
+				<nav className="navBarItemContainer">
+					<a href='/pharmacies'>How GoodRx Works</a>
+					<a href='/pharmacies'>Discount Card</a>
+					<a href='/pharmacies'>More</a>
+				</nav>
 			</div>
 
 		</div>

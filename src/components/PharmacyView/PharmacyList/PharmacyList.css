@@ -1,0 +1,22 @@
+#pharmacyListContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+	flex-basis: 30%;
+}
+
+.cardHeader {
+	color: white;
+	text-align: left;
+  background-color: forestgreen;
+  padding: 5px 10px;
+}
+
+.cardContent {
+	text-align: left;
+	color: black;
+	background-color: lightgrey;
+}

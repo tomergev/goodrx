@@ -12,7 +12,7 @@ const PharmacyCheckboxes = (props) => {
 		<div id='checkboxesContainer'>
 			<p style={{ flexBasis: '100%' }}>
 				Filter Pharmacies
-				</p>
+			</p>
 
 			{
 				// Todo: Place checkbox component in this file or make it able to use more globally

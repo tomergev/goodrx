@@ -3,6 +3,7 @@ import React, { useState, useEffect, useMemo } from 'react'
 import api from '../../services/api'
 import getLocation from '../../services/geolocation'
 
+import PharmacyList from './PharmacyList'
 import LocationSearchBar from './LocationSearchBar'
 import PharmacyCheckboxes from './PharmacyCheckboxes'
 
@@ -53,7 +54,7 @@ const PharmacyViewContainer = () => {
 				...[{ location: searchBarValue.length === 0 ? `${lat},${lng}` : searchBarValue }],
 			]
 
-			const pharmacies = await api({ params })
+			const { pharmacies } = await api({ params })
 			setPharmacies(pharmacies)
 		}
 
@@ -80,11 +81,20 @@ const PharmacyViewContainer = () => {
 		/>
 	), [pharmacyFilter])
 
+	const memoizedPharmacyList = useMemo(() => (
+		<PharmacyList
+			{...{
+				pharmacies
+			}}
+		/>
+	), [pharmacies])
+
 	// Todo: Set Values not to display until the lat and lng of the user are known
 	return (
 		<React.Fragment>
 			{memoizedLocationSearchBar}
 			{memoizedPharmacyCheckboxes}
+			{memoizedPharmacyList}
 		</React.Fragment>
 	)
 }

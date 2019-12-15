@@ -18,6 +18,8 @@ const LocationSearchBar = (props) => {
 		setUserLocation({ lat, lng })
 	}
 
+	const resetClick = () => setSearchBarValue('')
+
 	return (
 		<div id='seacrhContainer'>
 			<input
@@ -33,7 +35,7 @@ const LocationSearchBar = (props) => {
 				</p>
 			</Button>
 
-			<Button className="searchBarButton">
+			<Button onClick={resetClick} className="searchBarButton">
 				<p>
 					Reset
 				</p>
