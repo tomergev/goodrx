@@ -1,15 +1,13 @@
 import React from 'react'
-import './Checkbox.css'
+import './PharmacyCheckboxes.css'
 
-const Checkbox = (props) => {
+const FilterPharmacies = (props) => {
 	const {
-		checked,
-		pharmacyName,
 		pharmacyFilter,
 		setPharmacyFilter,
 	} = props
 
-	return (
+	const Checkbox = ([pharmacyName, { checked }]) => (
 		<div key={pharmacyName} className="checkbox">
 			<input
 				type="checkbox"
@@ -27,9 +25,18 @@ const Checkbox = (props) => {
 			<span>{pharmacyName}</span>
 		</div>
 	)
+
+	const PharmacyCheckboxes = Object.entries(pharmacyFilter).map(Checkbox)
+
+	return (
+		<div id='checkboxesContainer'>
+			<p id='pharmacyCheckboxesTitle'>
+				Filter Pharmacies
+			</p>
+
+			{PharmacyCheckboxes}
+		</div>
+	)
 }
 
-
-
-
-export default Checkbox
+export default FilterPharmacies

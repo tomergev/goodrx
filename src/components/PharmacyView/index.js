@@ -4,8 +4,8 @@ import api from '../../services/api'
 import getLocation from '../../services/geolocation'
 
 import PharmacyList from './PharmacyList'
+import FilterPharmacies from './FilterPharmacies'
 import LocationSearchBar from './LocationSearchBar'
-import PharmacyCheckboxes from './PharmacyCheckboxes'
 
 const PharmacyViewContainer = () => {
 	const [searchBarValue, setSearchBarValue] = useState('')
@@ -63,37 +63,28 @@ const PharmacyViewContainer = () => {
 
 	const memoizedLocationSearchBar = useMemo(() => (
 		<LocationSearchBar
-			{...{
-				userLocation,
-				setUserLocation,
-				searchBarValue,
-				setSearchBarValue,
-			}}
+			userLocation={userLocation}
+			setUserLocation={setUserLocation}
+			searchBarValue={searchBarValue}
+			setSearchBarValue={setSearchBarValue}
 		/>
 	), [userLocation, searchBarValue])
 
-	const memoizedPharmacyCheckboxes = useMemo(() => (
-		<PharmacyCheckboxes
-			{...{
-				pharmacyFilter,
-				setPharmacyFilter,
-			}}
+	const memoizedFilterPharmacies = useMemo(() => (
+		<FilterPharmacies
+			pharmacyFilter={pharmacyFilter}
+			setPharmacyFilter={setPharmacyFilter}
 		/>
 	), [pharmacyFilter])
 
 	const memoizedPharmacyList = useMemo(() => (
-		<PharmacyList
-			{...{
-				pharmacies
-			}}
-		/>
+		<PharmacyList pharmacies={pharmacies} />
 	), [pharmacies])
 
-	// Todo: Set Values not to display until the lat and lng of the user are known
 	return (
 		<React.Fragment>
 			{memoizedLocationSearchBar}
-			{memoizedPharmacyCheckboxes}
+			{memoizedFilterPharmacies}
 			{memoizedPharmacyList}
 		</React.Fragment>
 	)

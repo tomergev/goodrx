@@ -20,30 +20,46 @@ const NavBar = () => {
 	}
 
 	return (
-		<div id='navBarContainer' style={navBarStyle}>
-			<h2 id='navBarLogo'>
-				<img src={goodrxLogo} alt='Logo' width={80} />
-			</h2>
+		<React.Fragment>
+			<div id='mobileFlexContainer' style={navBarStyle}>
+				<h2 className='mobileFlexItem'>
+					<img src={goodrxLogo} alt='Logo' width={80} />
+				</h2>
 
-			<div id='navBarSearchBarAndButton'>
-				<form onSubmit={onSubmit}>
-					<input type="text" id='navBarSearchBar' />
-					<Button
-						type='submit'
-						style={buttonStyle}
-						id='navBarSearchButton'
-					>
-						<i className="fa fa-search"></i>
-					</Button>
-				</form>
+				<i
+					className="fa fa-search mobileFlexItem"
+					onClick={() => console.log('search')}
+				>
+				</i>
 			</div>
 
-			<div id="navBarLinks">
-				<a href='/pharmacies'>How GoodRx Works</a>
-				<a href='/pharmacies'>Discount Card</a>
-				<a href='/pharmacies'>More</a>
+
+			<div id='navBarContainer' style={navBarStyle}>
+				<h2 >
+					<img src={goodrxLogo} alt='Logo' width={80} />
+				</h2>
+
+				<div id='navBarSearchBarAndButton'>
+					<form onSubmit={onSubmit}>
+						<input type="text" id='navBarSearchBar' />
+						<Button
+							type='submit'
+							style={buttonStyle}
+							id='navBarSearchButton'
+						>
+							<i className="fa fa-search"></i>
+						</Button>
+					</form>
+				</div>
+
+				<div id="navBarLinks">
+					<a href='/pharmacies'>How GoodRx Works</a>
+					<a href='/pharmacies'>Discount Card</a>
+					<a href='/pharmacies'>More</a>
+				</div>
 			</div>
-		</div>
+		</React.Fragment>
+
 	)
 }
 
