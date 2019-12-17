@@ -12,3 +12,7 @@
 .searchBarButton {
 	flex-basis: 15%;
 }
+
+#userLatLng {
+	flex-basis: 100%;
+}

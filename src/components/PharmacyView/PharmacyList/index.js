@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './PharmacyList.css'
+import { ThemeContext } from '../../../App'
 
-const PharmacyCard = (props) => {
+const PharmacyCard = ({ pharmacy, pharmacyCardColor }) => {
 	const {
 		name,
 		address,
 		phone_number,
-	} = props
+	} = pharmacy
 
 	const {
 		city,
@@ -16,21 +17,26 @@ const PharmacyCard = (props) => {
 	} = address
 
 	return (
-		<div key={phone_number} className='card'>
-			<div className='cardHeader'>
-				{name}
-			</div>
-			<div className='cardContent'>
-				<span>{line1}</span>
-				<p>{city} {state}, {zip_code}</p>
-				<p>{phone_number}</p>
+		<div key={phone_number} className='cardOuter'>
+			<div className='cardInner'>
+				<div className='cardHeader'>
+					{name}
+				</div>
+				<div className='cardContent' style={{ backgroundColor: pharmacyCardColor }}>
+					<span className="pharmacyInfo">
+						{line1} <br />
+						{city} {state}, {zip_code} <br />
+						{phone_number} <br />
+					</span>
+				</div>
 			</div>
 		</div>
 	)
 }
 
 const PharmacyList = ({ pharmacies }) => {
-	const PharmacyCards = pharmacies.map(PharmacyCard)
+	const { pharmacyCardColor } = useContext(ThemeContext)
+	const PharmacyCards = pharmacies.map((pharmacy) => PharmacyCard({ pharmacy, pharmacyCardColor }))
 
 	return (
 		<div id='pharmacyListContainer'>

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './LocationSearchBar.css'
 import Button from '../../Button'
+import { ThemeContext } from '../../../App'
 import getLocation from '../../../services/geolocation'
 
 const LocationSearchBar = (props) => {
@@ -19,33 +20,42 @@ const LocationSearchBar = (props) => {
 	}
 
 	const resetClick = () => setSearchBarValue('')
+	const { buttonColor } = useContext(ThemeContext)
 
 	return (
 		<div id='seacrhContainer'>
 			<input
 				id='searchBarInput'
 				value={searchBarValue}
-				placeholder='Address or Zip'
+				placeholder='	Address or Zip'
 				onChange={(e) => setSearchBarValue(e.target.value)}
 			/>
 
-			<Button onClick={detectMyLocationClick} className="searchBarButton">
+			<Button
+				style={{ background: buttonColor }}
+				onClick={detectMyLocationClick}
+				className="searchBarButton"
+			>
 				<p>
 					Detect My Location
 				</p>
 			</Button>
 
-			<Button onClick={resetClick} className="searchBarButton">
+			<Button
+				style={{ background: buttonColor }}
+				className="searchBarButton"
+				onClick={resetClick}
+			>
 				<p>
 					Reset
 				</p>
 			</Button>
 
-			<p style={{ flexBasis: '100%' }}>
+			<p id='userLatLng' >
 				<u>
 					My Location:
 			</u>
-				{/* Todo: Add proper spacing here */}
+				{'   '  /* Adding Space */}
 				{lat}, {lng}
 			</p>
 

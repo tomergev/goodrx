@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './NavBar.css'
 // import goodrxLogo from './goodrx.svg'
+import { ThemeContext } from '../../App'
 import Button from '../Button'
 
 const NavBar = () => {
+	const {
+		navBarColor,
+		buttonColor,
+	} = useContext(ThemeContext)
+
+	const navBarStyle = { backgroundColor: navBarColor }
+
 	return (
-		<div id='navBarOuterContainer'>
+		<div id='navBarOuterContainer' style={navBarStyle}>
 			<div id="navBarInnerContainer">
 				{/* <img src={goodrxLogo} alt='Logo' width={200} /> */}
 				<div className="navBarItemContainer">
@@ -14,7 +22,7 @@ const NavBar = () => {
 
 				<div className="navBarItemContainer">
 					<input type="text" placeholder="Search.." />
-					<Button><i className="fa fa-search"></i></Button>
+					<Button style={{ background: buttonColor }}><i className="fa fa-search"></i></Button>
 				</div>
 
 				<nav className="navBarItemContainer">

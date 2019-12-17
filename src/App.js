@@ -9,15 +9,31 @@ import "./App.css";
 import NavBar from './components/NavBar'
 import PharmacyView from './components/PharmacyView/'
 
+const defaultTheme = {
+  navBarColor: '#f9e547',
+  buttonColor: 'blue',
+  pharmacyCardColor: '#ddd',
+}
+
+const bonusTheme = {
+  navBarColor: '#47B8F9',
+  buttonColor: '#DB7400',
+  pharmacyCardColor: 'pink',
+}
+
+export const ThemeContext = React.createContext(bonusTheme)
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <div className="App-content">
-          <PharmacyView />
+      <ThemeContext.Provider value={defaultTheme}>
+        <div className="App">
+          <NavBar />
+          <div className="App-content">
+            <PharmacyView />
+          </div>
         </div>
-      </div>
+      </ThemeContext.Provider>
     );
   }
 }
