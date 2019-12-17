@@ -2,17 +2,53 @@
 	flex: 1;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: left;
 }
 
 #searchBarInput {
-	flex-basis: 40%;
+	flex-basis: 45%;
+	margin-right: 30px;
 }
 
 .searchBarButton {
-	flex-basis: 15%;
+	flex-basis: 18%;
+	margin-right: 30px;
+}
+
+#mobileView {
+	display: none;
 }
 
 #userLatLng {
 	flex-basis: 100%;
+}
+
+#underline {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+	#seacrhContainer {
+		justify-content: left;
+	}
+	
+	#searchBarInput {
+		flex-basis: 100%;
+		margin-right: 0px;
+		line-height: 35px; 
+	}
+
+	.searchBarButton {
+		flex-basis: 40%;
+		margin-right: 15px;
+		margin-top: 10px;
+	}
+
+	#mobileView {
+		display: inline-block;
+	}
+
+	#tabletDesktopView {
+		display: none;
+	}
 }

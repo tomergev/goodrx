@@ -10,7 +10,7 @@ const PharmacyCheckboxes = (props) => {
 
 	return (
 		<div id='checkboxesContainer'>
-			<p style={{ flexBasis: '100%' }}>
+			<p id='pharmacyCheckboxesTitle' style={{ flexBasis: '100%' }}>
 				Filter Pharmacies
 			</p>
 

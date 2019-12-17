@@ -10,7 +10,7 @@ import NavBar from './components/NavBar'
 import PharmacyView from './components/PharmacyView/'
 
 const defaultTheme = {
-  navBarColor: '#f9e547',
+  navBarColor: 'yellow',
   buttonColor: 'blue',
   pharmacyCardColor: '#ddd',
 }

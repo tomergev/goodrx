@@ -3,6 +3,7 @@ import './Button.css'
 
 const Button = (props) => {
 	const {
+		id,
 		type,
 		style,
 		onClick,
@@ -12,11 +13,11 @@ const Button = (props) => {
 
 	return (
 		<button
-			id='defaultButtonStyles'
-			className={className}
-			onClick={onClick}
-			style={style}
+			id={id}
 			type={type}
+			style={style}
+			onClick={onClick}
+			className={`${className} defaultButtonStyles`}
 		>
 			{children && children}
 		</button>

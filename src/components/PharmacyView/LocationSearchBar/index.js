@@ -13,14 +13,15 @@ const LocationSearchBar = (props) => {
 	} = props
 
 	const { lat, lng } = userLocation
+	const { buttonColor } = useContext(ThemeContext)
 
+	const resetSearchBar = () => setSearchBarValue('')
 	const detectMyLocationClick = async () => {
+		resetSearchBar()
 		const { lat, lng } = await getLocation()
 		setUserLocation({ lat, lng })
 	}
 
-	const resetClick = () => setSearchBarValue('')
-	const { buttonColor } = useContext(ThemeContext)
 
 	return (
 		<div id='seacrhContainer'>
@@ -32,19 +33,23 @@ const LocationSearchBar = (props) => {
 			/>
 
 			<Button
-				style={{ background: buttonColor }}
-				onClick={detectMyLocationClick}
 				className="searchBarButton"
+				onClick={detectMyLocationClick}
+				style={{ background: buttonColor }}
 			>
-				<p>
+				<p id='tabletDesktopView'>
 					Detect My Location
+				</p>
+
+				<p id='mobileView'>
+					Detect Location
 				</p>
 			</Button>
 
 			<Button
-				style={{ background: buttonColor }}
 				className="searchBarButton"
-				onClick={resetClick}
+				style={{ background: buttonColor }}
+				onClick={resetSearchBar /* Resetting the value of the search bar */}
 			>
 				<p>
 					Reset
@@ -52,9 +57,9 @@ const LocationSearchBar = (props) => {
 			</Button>
 
 			<p id='userLatLng' >
-				<u>
+				<span id='underline'>
 					My Location:
-			</u>
+			</span>
 				{'   '  /* Adding Space */}
 				{lat}, {lng}
 			</p>

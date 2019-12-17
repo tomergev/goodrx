@@ -1,19 +1,51 @@
-#navBarOuterContainer {
-  padding: 20px;
-  color: #000;
-  justify-content: center;
+#navBarContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#navBarInnerContainer {
-  justify-content: space-around;
-  display: flex;
-  flex: 1;
+#navBarLogo {
+  /* margin-left: 154px; */
 }
 
-.navBarItemContainer {
-  justify-content: center;
-  display: flex;
-  flex: 1;
+#navBarSearchBar, #navBarSearchButton {  
+  line-height: 35px; 
+}
+
+#navBarSearchBarAndButton {
+  /* margin-left: 60px;
+  margin-right: 70px; */
+}
+
+#navBarSearchBar {
+  width: 450px;
+}
+
+#navBarLinks {
+  
+}
+
+#navBarLinks a {
+  text-decoration: none;
+  margin: 10px;
+  color: black;
+ }
+
+ @media screen and (max-width: 1100px) {
+	#navBarSearchBar {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+	#navBarSearchBar {
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+	#navBarSearchBar {
+    width: 100px;
+  }
 }

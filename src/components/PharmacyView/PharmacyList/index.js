@@ -25,7 +25,7 @@ const PharmacyCard = ({ pharmacy, pharmacyCardColor }) => {
 				<div className='cardContent' style={{ backgroundColor: pharmacyCardColor }}>
 					<span className="pharmacyInfo">
 						{line1} <br />
-						{city} {state}, {zip_code} <br />
+						{city}, {state}, {zip_code} <br />
 						{phone_number} <br />
 					</span>
 				</div>
@@ -40,7 +40,7 @@ const PharmacyList = ({ pharmacies }) => {
 
 	return (
 		<div id='pharmacyListContainer'>
-			<p style={{ flexBasis: '100%' }}>
+			<p id='pharmacyListTitle'>
 				Pharmacy List
 			</p>
 
