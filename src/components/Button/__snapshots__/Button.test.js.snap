@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creates a button 1`] = `
+<button
+  className="defaultButtonStyles undefined"
+  id={undefined}
+  onClick={[Function]}
+  style={undefined}
+  type={undefined}
+/>
+`;
+
+exports[`Creates a button 2`] = `
+<button
+  className="defaultButtonStyles undefined"
+  id={undefined}
+  onClick={[Function]}
+  style={undefined}
+  type={undefined}
+/>
+`;

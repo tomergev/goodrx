@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Button.css'
+import './Button.css'
 
 const Button = (props) => {
 	const {
@@ -15,11 +15,9 @@ const Button = (props) => {
 		<button
 			id={id}
 			type={type}
-			// style={{...styles.defaultButtonStyles ,...style}}
 			style={style}
 			onClick={onClick}
-			// className={className}
-			className={`${className} defaultButtonStyles`}
+			className={`defaultButtonStyles ${className}`}
 		>
 			{children && children}
 		</button>

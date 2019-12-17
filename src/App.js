@@ -3,9 +3,8 @@
  * https://github.com/facebook/create-react-app
 */
 
-import React, { Component } from "react";
-// Todo: Set up CSS modules
-import "./App.css";
+import React from "react"
+import "./App.css"
 import NavBar from './components/NavBar'
 import PharmacyView from './components/PharmacyView/'
 
@@ -23,19 +22,19 @@ const bonusTheme = {
 
 export const ThemeContext = React.createContext(bonusTheme)
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeContext.Provider value={defaultTheme}>
-        <div className="App">
-          <NavBar />
-          <div className="App-content">
-            <PharmacyView />
-          </div>
+const App = () => {
+  window.history.pushState(null, null, '/pharmacies');
+  
+  return (
+    <ThemeContext.Provider value={defaultTheme}>
+      <div className="App">
+        <NavBar />
+        <div className="App-content">
+          <PharmacyView />
         </div>
-      </ThemeContext.Provider>
-    );
-  }
+      </div>
+    </ThemeContext.Provider>
+  )
 }
 
-export default App;
+export default App
