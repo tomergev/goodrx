@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './LocationSearchBar.css'
 import Button from '../../Button'
-import { ThemeContext } from '../../../App'
 import getLocation from '../../../services/geolocation'
 
 const LocationSearchBar = (props) => {
@@ -14,7 +13,6 @@ const LocationSearchBar = (props) => {
 
 	const { lat, lng } = userLocation
 	const reset = () => setSearchBarValue('')
-	const { buttonColor } = useContext(ThemeContext)
 
 	const detectMyLocationClick = async () => {
 		reset()
@@ -22,20 +20,18 @@ const LocationSearchBar = (props) => {
 		setUserLocation({ lat, lng })
 	}
 
-
 	return (
 		<div id='seacrhContainer'>
 			<input
 				id='searchBarInput'
 				value={searchBarValue}
-				placeholder='	Address or Zip'
+				placeholder='  Address or Zip'
 				onChange={(e) => setSearchBarValue(e.target.value)}
 			/>
 
 			<Button
 				className="searchBarButton"
 				onClick={detectMyLocationClick}
-				style={{ background: buttonColor }}
 			>
 				<p id='tabletDesktopView'>
 					Detect My Location
@@ -48,7 +44,6 @@ const LocationSearchBar = (props) => {
 
 			<Button
 				className="searchBarButton"
-				style={{ background: buttonColor }}
 				onClick={reset /* Resetting the value of the search bar */}
 			>
 				<p>
@@ -60,9 +55,8 @@ const LocationSearchBar = (props) => {
 				<p id='userLatLng' >
 					<span id='underline'>
 						My Location:
-			</span>
-					{'   '  /* Adding Space */}
-					{lat}, {lng}
+					</span>
+					{'   '  /* Adding a Space */} {lat}, {lng}
 				</p>
 			)}
 		</div>

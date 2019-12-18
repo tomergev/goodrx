@@ -5,7 +5,11 @@ exports[`Creates a button 1`] = `
   className="defaultButtonStyles undefined"
   id={undefined}
   onClick={[Function]}
-  style={undefined}
+  style={
+    Object {
+      "background": "#DB7400",
+    }
+  }
   type={undefined}
 />
 `;
@@ -15,7 +19,11 @@ exports[`Creates a button 2`] = `
   className="defaultButtonStyles undefined"
   id={undefined}
   onClick={[Function]}
-  style={undefined}
+  style={
+    Object {
+      "background": "#DB7400",
+    }
+  }
   type={undefined}
 />
 `;

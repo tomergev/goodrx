@@ -51,4 +51,20 @@
 	#tabletDesktopView {
 		display: none;
 	}
+
+	#userLatLng {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	#userLatLng {
+		font-size: 0.81em;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	#userLatLng {
+		font-size: 0.72em;
+	}
 }

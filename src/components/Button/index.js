@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Button.css'
+import { ThemeContext } from '../../App'
 
 const Button = (props) => {
 	const {
 		id,
 		type,
-		style,
 		onClick,
 		children,
 		className,
 	} = props
 
+	const { buttonColor } = useContext(ThemeContext)
+	const buttonStyle = { background: buttonColor }
+
 	return (
 		<button
 			id={id}
 			type={type}
-			style={style}
 			onClick={onClick}
+			style={buttonStyle}
 			className={`defaultButtonStyles ${className}`}
 		>
 			{children && children}

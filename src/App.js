@@ -8,25 +8,26 @@ import "./App.css"
 import NavBar from './components/NavBar'
 import PharmacyView from './components/PharmacyView/'
 
-const defaultTheme = {
-  navBarColor: 'yellow',
-  buttonColor: 'blue',
-  pharmacyCardColor: '#ddd',
+const themes = {
+  default: {
+    navBarColor: 'yellow',
+    buttonColor: 'blue',
+    pharmacyCardColor: '#ddd',
+  },
+  bonus: {
+    navBarColor: '#47B8F9',
+    buttonColor: '#DB7400',
+    pharmacyCardColor: 'pink',
+  },
 }
 
-const bonusTheme = {
-  navBarColor: '#47B8F9',
-  buttonColor: '#DB7400',
-  pharmacyCardColor: 'pink',
-}
-
-export const ThemeContext = React.createContext(bonusTheme)
+export const ThemeContext = React.createContext(themes.bonus)
 
 const App = () => {
   window.history.pushState(null, null, '/pharmacies');
   
   return (
-    <ThemeContext.Provider value={defaultTheme}>
+    <ThemeContext.Provider value={themes['default' /* or 'bonus' */]}>
       <div className="App">
         <NavBar />
         <div className="App-content">

@@ -1,17 +1,12 @@
 import React, { useContext } from 'react'
 import './NavBar.css'
+import Button from '../Button'
 import goodrxLogo from './goodrx.svg'
 import { ThemeContext } from '../../App'
-import Button from '../Button'
 
 const NavBar = () => {
-	const {
-		navBarColor,
-		buttonColor,
-	} = useContext(ThemeContext)
-
+	const { navBarColor } = useContext(ThemeContext)
 	const navBarStyle = { backgroundColor: navBarColor }
-	const buttonStyle = { background: buttonColor }
 
 	const onSubmit = (e) => {
 		e.preventDefault()
@@ -27,7 +22,7 @@ const NavBar = () => {
 				</h2>
 
 				<i
-					className="fa fa-search mobileFlexItem"
+					className="fa fa-search fa-lg mobileFlexItem"
 					onClick={() => console.log('search')}
 				>
 				</i>
@@ -44,7 +39,6 @@ const NavBar = () => {
 						<input type="text" id='navBarSearchBar' />
 						<Button
 							type='submit'
-							style={buttonStyle}
 							id='navBarSearchButton'
 						>
 							<i className="fa fa-search"></i>
